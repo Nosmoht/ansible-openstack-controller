@@ -1,4 +1,5 @@
 ---
 dependencies:
-  - { role: ntp }
+  - { role: os-common }
   - { role: mariadb }
+  - { role: rabbitmq }
