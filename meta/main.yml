@@ -1,5 +1,5 @@
 ---
 dependencies:
-  - { role: os-common }
-  - { role: mariadb }
-  - { role: rabbitmq }
+- role: rabbitmq
+- role: os-common
+- role: os-keystone
