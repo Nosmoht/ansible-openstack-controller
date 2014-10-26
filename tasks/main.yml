@@ -4,3 +4,6 @@
 
 - name: Setup Openstack MQ user
   rabbitmq_user: user={{ openstack_message_broker_user_name }} password={{ openstack_message_broker_user_pass }}
+
+- name: Create Admin environment file
+  template: src=admin-openrc.sh.j2 dest=/root/admin-openrc.sh owner=root group=root mode=0600
