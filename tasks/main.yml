@@ -1,3 +1,6 @@
 ---
+- name: Restart RabbitMQ (seems to be a workaround but next command fails without it)
+  service: name={{ rabbitmq_service_name }} state=restarted
+
 - name: Setup Openstack MQ user
   rabbitmq_user: user={{ openstack_message_broker_user_name }} password={{ openstack_message_broker_user_pass }}
