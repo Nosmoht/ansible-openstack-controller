@@ -2,3 +2,7 @@
 
 export OS_SERVICE_TOKEN={{ openstack_keystone_admin_token }}
 export OS_SERVICE_ENDPOINT=http://{{ openstack_controller_node_name }}:35357/v2.0
+export OS_TENANT_NAME={{ openstack_admin_tenant_name }}
+export OS_USERNAME={{ openstack_admin_user_name }}
+export OS_PASSWORD={{ openstack_admin_user_pass }}
+export OS_AUTH_URL={{ openstack_controller_endpoint }}
