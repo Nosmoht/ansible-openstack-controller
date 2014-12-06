@@ -5,6 +5,7 @@
     password: '{{ openstack_message_broker_user_pass }}'
   sudo: true
   sudo_user: rabbitmq
+  delegate_to: '{{ openstack_message_queue_node_name }}'
 
 - name: Create Admin environment file
   template:
