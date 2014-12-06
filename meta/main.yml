@@ -1,5 +1,4 @@
 ---
 dependencies:
-- role: rabbitmq
 - role: os-common
 - role: os-keystone
