@@ -1,12 +1,16 @@
 ---
-#- name: Restart RabbitMQ (seems to be a workaround but next command fails without it)
-#  service: name={{ rabbitmq_service_name }} state=restarted
-
 - name: Setup Openstack MQ user
-  rabbitmq_user: user={{ openstack_message_broker_user_name }} password={{ openstack_message_broker_user_pass }}
-  sudo: yes
+  rabbitmq_user:
+    user: '{{ openstack_message_broker_user_name }}'
+    password: '{{ openstack_message_broker_user_pass }}'
+  sudo: true
   sudo_user: rabbitmq
 
 - name: Create Admin environment file
-  template: src=admin-openrc.sh.j2 dest=/root/admin-openrc.sh owner=root group=root mode=0600
+  template:
+    src: admin-openrc.sh.j2
+    dest: /root/admin-openrc.sh
+    owner: root
+    group: root
+    mode: 384
   tags: admin_env_file
